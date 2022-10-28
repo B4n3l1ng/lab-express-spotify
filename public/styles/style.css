@@ -1,0 +1,11 @@
+body{
+    padding:0px;
+    margin: 0px;
+}
+.home-page {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../images/spotify-background.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
