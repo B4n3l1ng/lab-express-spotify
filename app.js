@@ -34,10 +34,6 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get("/artist-search-results", (req, res) => {
-  res.render("artist-search-results");
-});
-
 app.post("/artist-search", (req, res) => {
   const { artist } = req.body;
   spotifyApi
@@ -46,9 +42,17 @@ app.post("/artist-search", (req, res) => {
       //console.log("The received data from the API: ", data.body);
       // ----> 'HERE WHAT WE WANT TO DO AFTER RECEIVING THE DATA FROM THE API'
       const items = data.body.artists.items.map((element) => element);
-      res.redirect("/artist-search-results");
+
+      //const url = items[0].images[0].url;
+      //console.log("url", url);
+      //console.log("items", items);
+      //console.log("images", images);
+      res.redirect("artist-search-results");
+
+      app.get("/artist-search-results", (req, res) => {
+        res.render("artist-search-results", { items: items });
+      });
       return items;
-      //console.log(items);
     })
     .catch((err) =>
       console.log("The error while searching artists occurred: ", err)
