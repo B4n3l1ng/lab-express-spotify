@@ -6,6 +6,6 @@
   <img src="<%= element.images[0].url %>" alt="" />
   <% } %>
   <p><%= element.name %></p>
-  <a href="/songs/<%= element.id %>" class="button">View Songs</a>
+  <a href="/songs/<%= element.id %>" class="button" method="POST">View Songs</a>
 </div>
 <% }) %>

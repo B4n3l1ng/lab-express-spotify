@@ -47,7 +47,6 @@ app.post("/artist-search", (req, res) => {
       app.get("/artist-search-results", (req, res) => {
         res.render("artist-search-results", { items: items });
       });
-      return items;
     })
     .catch((err) =>
       console.log("The error while searching artists occurred: ", err)
