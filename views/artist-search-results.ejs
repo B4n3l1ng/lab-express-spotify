@@ -1,6 +1,13 @@
-<% for(i = 0; i < items.length; i++ ) { %>
-<div>
-  <p><%= items[i].name %></p>
-  <a></a>
+<% items.forEach(element => { %>
+<div class="band">
+  <% if (element.images.length) { %>
+  <img src="<%=element.images[0].url %>" alt="" />
+  <% } %>
+  <div class="band-bottom">
+    <p class="band-name"><%= element.name %></p>
+    <a href="/albums/<%= element.id %>" class="button"
+      />View Albums</a
+    >
+  </div>
 </div>
-<% } %>
+<% }) %>
