@@ -1,0 +1,24 @@
+<div class="songs-page">
+  <div class="title-box">
+    <div class="title">
+      <h1>Title</h1>
+    </div>
+    <div class="preview">
+      <h1>Listen</h1>
+    </div>
+  </div>
+  <% songs.forEach(element => { %>
+  <div class="tracks">
+    <p class="track-title"><%= element.name %></p>
+    <% if (element.preview_url === null) { %>
+    <p class="track-preview">Preview not available</p>
+    <% } else { %>
+    <p class="track-preview">
+      <audio controls src="<%= element.preview_url %>">
+        <a href="<%= element.preview_url %> "></a>
+      </audio>
+    </p>
+    <% } %>
+  </div>
+  <% }) %>
+</div>

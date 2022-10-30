@@ -8,4 +8,119 @@ body{
     background-image: url("../images/spotify-background.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    height: 200px;
+    border: 1px; 
+    background-color: rgba(250, 250, 250, 0.4)
+}
+
+.search-box {
+    width: 300px;
+    margin: 10px
+}
+
+.button {
+    background-color: red;
+    border: 1px;
+    color: white;
+    width: 150px;
+    padding: 5px;
+    margin: 10px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 15px;
+}
+.band-and-album-page {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.band-and-album {
+    width: 400px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.band-and-album-image{
+    width: 400px;
+    height: 400px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.band-and-album-bottom {
+    background-color: darkslategrey;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+}
+
+.band-and-album-name{
+    color: white;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.songs-page {
+    margin: 15px
+}
+.title-box {
+    border: 0px;
+    background-color: rgba(0,0,0, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+}
+
+.title {
+    margin-left: 30px;
+    color: darkgrey
+}
+
+.preview {
+    margin-right: 60px;
+    color: darkgrey;
+}
+
+.tracks {
+    border: 0px;
+    background-color: rgba(0,0,0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    height: 7vh;
+}
+
+.track-title {
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.track-preview {
+    font-size: 20px;
+    margin-right: 30px;
 }

@@ -35,13 +35,13 @@ app.get("/", (req, res) => {
 });
 
 app.post("/artist-search", (req, res) => {
-  const { artist } = req.body;
+  let { artist } = req.body;
   spotifyApi
     .searchArtists(artist)
     .then((data) => {
       //console.log("The received data from the API: ", data.body);
       // ----> 'HERE WHAT WE WANT TO DO AFTER RECEIVING THE DATA FROM THE API'
-      const items = data.body.artists.items.map((element) => element);
+      let items = data.body.artists.items.map((element) => element);
       res.redirect("artist-search-results");
 
       app.get("/artist-search-results", (req, res) => {
@@ -55,13 +55,27 @@ app.post("/artist-search", (req, res) => {
 
 app.get("/albums/:artistId", (req, res, next) => {
   // .getArtistAlbums() code goes here
-  const { artistId } = req.params;
+  let { artistId } = req.params;
   spotifyApi
     .getArtistAlbums(artistId)
     .then((data) => {
       const albums = data.body.items.map((element) => element);
-      //console.log(albums[1].images[0].url);
       res.render("albums", { albums: albums });
+    })
+    .catch((error) => {
+      console.log("Error occured", error);
+    });
+});
+
+app.get("/songs/:albumId", (req, res, next) => {
+  // .getArtistAlbums() code goes here
+  let { albumId } = req.params;
+
+  spotifyApi
+    .getAlbumTracks(albumId)
+    .then((data) => {
+      const songs = data.body.items.map((element) => element);
+      res.render("songs", { songs: songs });
     })
     .catch((error) => {
       console.log("Error occured", error);
